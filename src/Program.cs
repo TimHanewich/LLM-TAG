@@ -131,6 +131,9 @@ namespace TextAdventureAI
             GameEngine.Model = model;
             
             
+            //Play the game
+            AnsiConsole.MarkupLine("[gray]Enjoy the game![/]");
+            Console.WriteLine();
             while (true)
             {
                 //Prepare game engine
