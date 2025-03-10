@@ -19,7 +19,7 @@ namespace TextAdventureAI
         public static async Task RunAsync()
         {
             //Branding
-            Markup title1 = new Markup(":joystick: [blue][bold]LLM TAG[/][/] :joystick:");
+            Markup title1 = new Markup(":joystick:  [blue][bold]LLM TAG[/][/] :joystick:");
             title1.Centered();
             AnsiConsole.Write(title1);
 
