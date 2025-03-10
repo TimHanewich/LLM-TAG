@@ -18,6 +18,22 @@ namespace TextAdventureAI
 
         public static async Task RunAsync()
         {
+            //Branding
+            Markup title1 = new Markup(":joystick: [blue][bold]LLM TAG[/][/] :joystick:");
+            title1.Centered();
+            AnsiConsole.Write(title1);
+
+            Markup title2 = new Markup("An [bold]LLM[/]-Driven [bold]T[/]ext [bold]A[/]dventure [bold]G[/]ame");
+            title2.Centered();
+            AnsiConsole.Write(title2);
+
+            Markup title3 = new Markup("[gray][italic]For more information, visit [underline]https://github.com/TimHanewich/LLM-TAG[/][/][/]");
+            title3.Centered();
+            AnsiConsole.Write(title3);
+
+            Console.WriteLine();
+            Console.WriteLine();
+
             //Azure openai credentials
             IModelConnection model;
             AzureOpenAICredentials? creds = JsonConvert.DeserializeObject<AzureOpenAICredentials>(System.IO.File.ReadAllText("azure-openai-credentials.json"));
