@@ -39,7 +39,13 @@ namespace TextAdventureAI
             AzureOpenAICredentials? creds = JsonConvert.DeserializeObject<AzureOpenAICredentials>(System.IO.File.ReadAllText("azure-openai-credentials.json"));
             if (creds == null)
             {
-                throw new Exception("Unable to parse AzureOpenAICredentials from azure-openai-credentials.json!");
+                AnsiConsole.MarkupLine("[red]Unable to parse AzureOpenAICredentials from azure-openai-credentials.json![/]");
+                return;
+            }
+            if (creds.URL == "" || creds.ApiKey == "")
+            {
+                AnsiConsole.MarkupLine("[red]You must place your Azure OpenAI credentials into azure-openai-credentials.json first![/]");
+                return;
             }
             model = creds;
 
